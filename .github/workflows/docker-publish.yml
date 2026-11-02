@@ -16,6 +16,7 @@ jobs:
   publish:
     name: Build and publish
     runs-on: ubuntu-latest
+    environment: Dockerhub
 
     steps:
       - name: Check out source
