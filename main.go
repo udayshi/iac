@@ -8,7 +8,7 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	hostname, _ := os.Hostname()
-	fmt.Fprintf(w, "You are on HOST: %s\n", hostname)
+	fmt.Fprintf(w, "You are on HOST: %s\n <br/>Powered by:Uday Shiwakoti", hostname)
 }
 
 func main() {
