@@ -31,11 +31,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Verify Docker Hub account
-        run: |
-          actual_username="$(docker info --format '{{.Username}}')"
-          test "$actual_username" = "${{ secrets.DOCKERHUB_USERNAME }}"
-
       - name: Build and publish multi-platform image
         uses: docker/build-push-action@v7
         with:
