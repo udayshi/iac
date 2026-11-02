@@ -17,5 +17,5 @@ func main() {
 
 	// Start the server on port 80
 	fmt.Println("Server listening on port 80...")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":80", nil)
 }
