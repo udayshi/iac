@@ -9,9 +9,6 @@ on:
 permissions:
   contents: read
 
-env:
-  IMAGE_NAME: shiuday/small-web-container
-
 jobs:
   publish:
     name: Build and publish
@@ -34,13 +31,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Verify Docker Hub account
+        run: |
+          actual_username="$(docker info --format '{{.Username}}')"
+          test "$actual_username" = "${{ secrets.DOCKERHUB_USERNAME }}"
+
       - name: Build and publish multi-platform image
         uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           tags: |
-            ${{ env.IMAGE_NAME }}:latest
-            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/small-web-container:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/small-web-container:${{ github.sha }}
