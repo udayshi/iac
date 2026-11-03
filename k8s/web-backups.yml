@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: web-volume-backup
+spec:
+  schedule: "0 2 * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 7
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: backup
+              image: busybox:1.36.1
+              command:
+                - /bin/sh
+                - -ec
+                - |
+                  backup_dir="/backup/$(date +%d-%m-%Y)"
+                  mkdir -p "$backup_dir"
+                  tar -C /source -cf - . | tar -C "$backup_dir" -xf -
+              volumeMounts:
+                - name: source
+                  mountPath: /source
+                  readOnly: true
+                - name: backup
+                  mountPath: /backup
+          volumes:
+            - name: source
+              persistentVolumeClaim:
+                claimName: web-pvc
+            - name: backup
+              persistentVolumeClaim:
+                claimName: web-backup-pvc
