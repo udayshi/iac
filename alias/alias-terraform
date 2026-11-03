@@ -1,0 +1,45 @@
+# base command for terraform. alias: tf
+alias tf="terraform"
+
+# initialize a working directory. alias: tfi
+alias tfi="terraform init"
+
+# check syntax and configuration formatting. alias: tfv
+alias tfv="terraform validate"
+
+# create an execution plan. alias: tfp
+alias tfp="terraform plan"
+
+# create and save an execution plan to a file. alias: tfps
+alias tfps="terraform plan -out=tfplan"
+
+# build or change infrastructure. alias: tfa
+alias tfa="terraform apply"
+
+# destroy infrastructure. alias: tfd
+alias tfd="terraform destroy"
+
+# refresh the state file. alias: tfr
+alias tfr="terraform refresh"
+
+# output resource values from state. alias: tfo
+alias tfo="terraform output"
+
+# format configuration files. alias: tfmt
+alias tfmt="terraform fmt"
+
+# Resource-Specific Full Aliases
+# terraform show. alias: tfs
+alias tfs="terraform show"
+
+# terraform state list. alias: tfsl
+alias tfsl="terraform state list"
+
+# terraform state show. alias: tfss
+alias tfss="terraform state show"
+
+# terraform workspace list. alias: tfwl
+alias tfwl="terraform workspace list"
+
+# terraform workspace select. alias: tfws
+alias tfws="terraform workspace select"

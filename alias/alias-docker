@@ -1,0 +1,57 @@
+# base command for docker. alias: d
+alias d="docker"
+
+# run a container. alias: dr
+alias dr="docker run"
+
+# run a container interactively with a terminal. alias: drit
+alias drit="docker run -it"
+
+# execute a command in a running container. alias: dex
+alias dex="docker exec -it"
+
+# stop a running container. alias: dst
+alias dst="docker stop"
+
+# start a stopped container. alias: dsta
+alias dsta="docker start"
+
+# restart a container. alias: dre
+alias dre="docker restart"
+
+# remove a container. alias: drm
+alias drm="docker rm"
+
+# print the logs for a container. alias: dl
+alias dl="docker logs"
+
+# stream the logs for a container. alias: dlf
+alias dlf="docker logs -f"
+
+# build an image from a Dockerfile. alias: db
+alias db="docker build"
+
+# pull an image or a repository from a registry. alias: dpu
+alias dpu="docker pull"
+
+# push an image or a repository to a registry. alias: dpsh
+alias dpsh="docker push"
+
+# Resource-Specific Full Aliases
+# docker ps. alias: dps
+alias dps="docker ps"
+
+# docker ps -a. alias: dpsa
+alias dpsa="docker ps -a"
+
+# docker images. alias: dimg
+alias dimg="docker images"
+
+# docker volume ls. alias: dv
+alias dv="docker volume ls"
+
+# docker network ls. alias: dnet
+alias dnet="docker network ls"
+
+# docker system prune -f. alias: dprune
+alias dprune="docker system prune -f"

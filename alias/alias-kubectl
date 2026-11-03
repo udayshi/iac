@@ -1,0 +1,95 @@
+
+# for FILE in `ls ~/bin/alias`; 
+#     do 
+#     source ~/bin/alias/$FILE
+#     alias cat_$FILE="cat ~/bin/alias/${FILE}"
+#     done
+
+# base command for kubectl. alias: k
+alias k="kubectl"
+
+
+# get resources. alias: kg
+alias kg="kubectl get"
+
+# describe resources. alias: kd
+alias kd="kubectl describe"
+
+# delete resources. alias: kdel
+alias kdel="kubectl delete"
+
+# apply configuration from a file. alias: ka
+alias ka="kubectl apply -f"
+
+# execute a command in a container. alias: kex
+alias kex="kubectl exec -it"
+
+# print the logs for a container in a pod. alias: kl
+alias kl="kubectl logs"
+
+# stream the logs for a container in a pod. alias: klf
+alias klf="kubectl logs -f"
+
+# Resource-Specific Full Aliases
+# list all pods. alias: kgp
+alias kgp="kubectl get pods"
+
+# list all pods across all namespaces. alias: kgpa
+alias kgpa="kubectl get pods -A"
+
+# list all pods with wide output. alias: kgpw
+alias kgpw="kubectl get pods -o wide"
+
+# list all deployments. alias: kgd
+alias kgd="kubectl get deployments"
+
+# list all services. alias: kgs
+alias kgs="kubectl get services"
+
+# list cluster configuration/contexts. alias: kgc
+alias kgc="kubectl get config"
+
+# list all nodes. alias: kgn
+alias kgn="kubectl get nodes"
+
+# list all ingresses. alias: kgi
+alias kgi="kubectl get ingresses"
+
+# list all configmaps. alias: kgcm
+alias kgcm="kubectl get configmaps"
+
+# list all secrets. alias: kgsec
+alias kgsec="kubectl get secrets"
+
+# list all namespaces. alias: kgns
+alias kgns="kubectl get namespaces"
+
+# list all persistent volumes. alias: kgpv
+alias kgpv="kubectl get persistentvolumes"
+
+# list all persistent volume claims. alias: kgpvc
+alias kgpvc="kubectl get persistentvolumeclaims"
+
+# list all cluster events. alias: kge
+alias kge="kubectl get events"
+
+# list all jobs. alias: kgj
+alias kgj="kubectl get jobs"
+
+# list all cronjobs. alias: kgcj
+alias kgcj="kubectl get cronjobs"
+
+# list all daemonsets. alias: kgds
+alias kgds="kubectl get daemonsets"
+
+# list all statefulsets. alias: kgsts
+alias kgsts="kubectl get statefulsets"
+
+# list all service accounts. alias: kgsa
+alias kgsa="kubectl get serviceaccounts"
+
+# list all role bindings. alias: kgrb
+alias kgrb="kubectl get rolebindings"
+
+# list all cluster role bindings. alias: kgcrb
+alias kgcrb="kubectl get clusterrolebindings"
