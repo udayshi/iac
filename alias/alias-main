@@ -1,0 +1,5 @@
+#Provide grep command for the alias
+alias grep-cmd='us_grep() { grep -rihI -C 1 "$*" ~/bin/alias; }; us_grep'
+
+#Load all alias file
+alias load-alias='us_alias() { for FILE in `ls ~/bin/alias`; do; source ~/bin/alias/$FILE; done; }; us_alias'
